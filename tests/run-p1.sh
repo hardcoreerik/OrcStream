@@ -28,8 +28,11 @@ ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
   cmake --build "$d" --parallel 2 || exit 1
   ctest --test-dir "$d" --output-on-failure || exit 1
   if clang -std=c99 -fsanitize=fuzzer,address,undefined -I"$ROOT/include" "$ROOT/tests/fuzz_decode.c" "$ROOT/src/orcstream.c" -o "$d/fuzz_decode"; then
-    echo "COMMAND: $d/fuzz_decode -runs=20000 $ROOT/tests/corpus"
-    "$d/fuzz_decode" -runs=20000 "$ROOT/tests/corpus" || exit 1
+    corpus="$d/fuzz-corpus"
+    mkdir -p "$corpus"
+    cp "$ROOT/tests/corpus/cs16le_frame.bin" "$corpus/"
+    echo "COMMAND: $d/fuzz_decode -runs=20000 $corpus"
+    "$d/fuzz_decode" -runs=20000 "$corpus" || exit 1
   else
     echo 'libFuzzer unavailable; not passed'
   fi

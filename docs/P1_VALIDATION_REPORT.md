@@ -30,11 +30,11 @@ Each entry uses 20,017 samples, fixed Python stdlib PRNG seed `0x5EED + format_i
 
 | Payload bytes | Encode payload MB/s | Decode payload MB/s | CRC-only MB/s | Header overhead | Required ideal frame MB/s |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1,152 | 99.37 | 102.90 | 100.60 | 5.263% | 10.133 |
-| 32,768 | 103.03 | 104.90 | 96.38 | 0.195% | 9.619 |
-| 65,536 | 97.07 | 99.04 | 74.92 | 0.098% | 9.609 |
+| 1,152 | 101.81 | 99.87 | 98.01 | 5.263% | 10.133 |
+| 32,768 | 106.69 | 60.48 | 96.11 | 0.195% | 9.619 |
+| 65,536 | 107.05 | 106.62 | 102.71 | 0.098% | 9.609 |
 
-At CS16 960 kS/s the raw payload requirement is 3.84 MB/s; at 2.4 MS/s it is 9.6 MB/s. For CF32 at 2.4 MS/s it is 19.2 MB/s, before headers/network. These are calculations, not link throughput. No calibrated CPU utilization or per-core power measurement; timings are noisy single-host figures, not superiority claims.
+At CS16 960 kS/s the raw payload requirement is 3.84 MB/s; at 2.4 MS/s it is 9.6 MB/s. For CF32 at 2.4 MS/s it is 19.2 MB/s, before headers/network. These are calculations, not link throughput. No calibrated CPU utilization or per-core power measurement; timings are noisy single-host figures (including one anomalously slow 32,768-byte decode run), not superiority claims.
 
 **Memory:** stateless core encode/decode uses no heap; `orcstream_reader` needs 64–65,600 bytes of caller-provided storage depending on accepted maximum frame. Demo producer reserves 32,768-byte payload plus 32,832-byte output buffers; consumer reserves 65,600-byte reader plus 113-byte input chunk, plus standard I/O runtime state. `orcstream_bench` uses `malloc` only in the standalone benchmark. No buffer grows with packets processed. Separate malloc/free checks and embedded stack sizing are outstanding.
 
