@@ -48,4 +48,4 @@ A feature is complete only when the code, intended-platform build, functional te
 
 ## P1 host-test evidence (2026-11-10, unmerged)
 
-See [P1 validation](P1_VALIDATION_REPORT.md) for a reproducible offline C99 producer/consumer, independent Python IQ fixtures, malformed-frame tests, sanitizer/fuzz runs, CPU-time microbenchmarks and memory bounds. The branch supplies `tests/run-p1.sh` that writes `orcstream-p1-test.log` into the current command directory. No SDR, operating-system cross-build or embedded hardware gate was met by this host-only evidence.
+See [P1 validation](P1_VALIDATION_REPORT.md) for a reproducible offline C99 producer/consumer, independent Python IQ fixtures, malformed-frame tests, sanitizer/fuzz runs, CPU-time microbenchmarks and memory bounds. The branch supplies `tests/run-p1.sh` that writes `orcstream-p1-test.log` into the current command directory. GitHub Actions subsequently passed all 7 Ubuntu/Windows/macOS Debug/Release and sanitizer jobs ([run 42945149685](https://github.com/hardcoreerik/OrcStream/actions/runs/42945149685)); no real SDR or embedded hardware gate was met.

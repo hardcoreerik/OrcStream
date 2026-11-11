@@ -9,7 +9,7 @@
 - P1: Clang Debug with AddressSanitizer + UndefinedBehaviorSanitizer, `-Werror`: **2/2 tests passed**.
 - `independent_iq_roundtrip.py`: **24 raw producer/consumer roundtrips**, 6 formats × 4 packet sizes, 20,017 complex samples per case; per-format source/reconstructed SHA-256 matches; **16 negative streams rejected**.
 - Clang libFuzzer+ASan+UBSan: 10,000 empty-corpus randomized runs and 20,000 seeded mutation runs, no reported crash. This is a bounded fuzz smoke check, not a security audit or exhaustive parser verification.
-- Windows and macOS are **CI-configured, not observed as passed**; ESP-IDF/esp32p4 compiler not present, so no embedded build compatibility result. No real hardware or client interoperability tests.
+- GitHub Actions run [42945149685](https://github.com/hardcoreerik/OrcStream/actions/runs/42945149685) completed **successfully with 7/7 jobs**: Ubuntu, Windows and macOS Debug and Release host matrix (6 jobs) plus the Ubuntu sanitizer job. These are GitHub runner results, not local Windows/macOS tests. ESP-IDF/esp32p4 compiler was unavailable locally, so there is no embedded-build compatibility result. No real hardware or client interoperability tests.
 
 ## SHA-256 reference fixture digest
 
@@ -42,4 +42,4 @@ At CS16 960 kS/s the raw payload requirement is 3.84 MB/s; at 2.4 MS/s it is 9.6
 
 Run from repo root. The full log is written to `./orcstream-p1-test.log` (same directory as the test commands). Do not redirect logs to a build subfolder. Run `bash ./tests/run-p1.sh`; it prints compiler versions, command lines, test outcomes, fuzz evidence when Clang supports libFuzzer and benchmark results.
 
-Investigate missing: ESP-IDF esp32p4 compile, Windows/macOS executed CI results, independent third-party decoder vectors, real network impairment and timing, long-running malformed input corpora, security and real SDR source scan format.
+Investigate missing: ESP-IDF esp32p4 compile, independent third-party decoder vectors, real network impairment and timing, long-running malformed input corpora, security and real SDR source scan format.

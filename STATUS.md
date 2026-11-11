@@ -51,4 +51,4 @@ Do not treat roadmap entries or downstream anecdotes as completed OrcStream work
 - `agents/p1-c99-fidelity-core`: GCC 14.2 and Clang 17 Linux Debug/Release with `-Werror`: 2/2 CTest each across four configurations; Clang ASan/UBSan: 2/2 passing.
 - Independent C producer and C consumer with Python fixtures: 24 SHA-256 byte-exact cases across six formats; 16 intentionally malformed, truncated, reordered, duplicated, multi-stream or data-loss streams rejected.
 - Clang libFuzzer/ASan/UBSan: 20,000 seeded iterations, no reported crash. CPU-time benchmarks and memory bounds: [P1 validation](docs/P1_VALIDATION_REPORT.md).
-- Not verified: actual Windows/macOS CI, ESP32-P4/ESP-IDF, live SDR, network impairment/security or independent third-party interop. `main` release state is unchanged.
+- GitHub Actions on branch head 5d0d0e6: Ubuntu/Windows/macOS Debug and Release plus Ubuntu sanitizers all passed (7/7 jobs; [run 42945149685](https://github.com/hardcoreerik/OrcStream/actions/runs/42945149685)). Not verified: ESP32-P4/ESP-IDF, live SDR, network impairment/security or independent third-party interop. `main` release state is unchanged.
