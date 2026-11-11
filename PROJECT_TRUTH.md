@@ -51,3 +51,8 @@ The first intended adopters include **custom PlutoSDR firmware**, **OrcSDR** and
 **Pluto reference track:** portable `esp-pluto-sdr` hardware driver plus separately maintained specialized Pluto firmware/FPGA: standard IIO fallback, optional native OrcStream, hardware processing, GPIO, events and decoder offload. OrcStream defines transferable semantics but must remain useful without the Pluto.
 
 See [ARCHITECTURE.md](ARCHITECTURE.md), [ROADMAP.md](ROADMAP.md), [STATUS.md](STATUS.md), [docs/PLUTO_ACCELERATION.md](docs/PLUTO_ACCELERATION.md), [docs/PROTOCOL_EVOLUTION.md](docs/PROTOCOL_EVOLUTION.md), and [docs/VALIDATION.md](docs/VALIDATION.md).
+
+
+## P1 unmerged branch update (2026-11-10)
+
+**EXPERIMENTAL, NOT MERGED:** `agents/p1-c99-fidelity-core` carries a hardened C99 host data plane, six-format offline IQ roundtrip tests, a bounded fuzz harness and CPU-time microbenchmarks. Linux GCC/Clang Debug/Release and Clang sanitizers were observed passing in a sandbox; details and source hashes are in [P1 validation](docs/P1_VALIDATION_REPORT.md). `main` remains the authoritative merged release state. Windows/macOS CI execution, ESP32-P4 compilation, hardware IQ, security and third-party interoperability are unverified.

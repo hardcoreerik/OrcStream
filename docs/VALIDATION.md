@@ -44,3 +44,8 @@ Report **source-side IQ** separately from **subscriber-delivered IQ**. A USB rec
 ## Definition of complete
 
 A feature is complete only when the code, intended-platform build, functional tests, negative/error tests, documentation and evidence all agree. FPGA/firmware features require recoverability and hardware proof. Cross-platform claims require at least one verified implementation per claimed platform.
+
+
+## P1 host-test evidence (2026-11-10, unmerged)
+
+See [P1 validation](P1_VALIDATION_REPORT.md) for a reproducible offline C99 producer/consumer, independent Python IQ fixtures, malformed-frame tests, sanitizer/fuzz runs, CPU-time microbenchmarks and memory bounds. The branch supplies `tests/run-p1.sh` that writes `orcstream-p1-test.log` into the current command directory. No SDR, operating-system cross-build or embedded hardware gate was met by this host-only evidence.

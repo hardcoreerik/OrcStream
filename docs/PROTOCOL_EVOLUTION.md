@@ -69,3 +69,8 @@ Transport adapters include TCP, UDP, file and optional USB bulk/USB IP; independ
 - Document interoperability benchmark method, resource and timing results.
 
 See [../ROADMAP.md](../ROADMAP.md) and [PLUTO_ACCELERATION.md](PLUTO_ACCELERATION.md).
+
+
+## P1 extension decision (proposed, not implemented)
+
+Keep v0.1 packet offsets unchanged for P1. Do not overload existing flags or claim compatibility with later packet families. For the next draft consider versioned extension framing and a critical/optional metadata registry for source/channel/epoch identity, clock uncertainty, codec/decoded bounds, transform provenance and event windows. Specify unknown-field handling and independent golden wire vectors before revising the header. See [P1 review](P1_REVIEW.md).
