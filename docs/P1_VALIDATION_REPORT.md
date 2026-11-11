@@ -7,7 +7,7 @@
 - Reviewed experimental original `tests/test_orcstream.c` and retained the original codec logic. Locally reconstructed the original C99 codec and unit test; baseline Debug build: **1/1 CTest passed**. The experimental file/UDP demos were reviewed, but not independently rerun as the local baseline; the prior 3/3 figure in experimental HANDOFF remains only its historical reported evidence.
 - P1: GCC/Clang × Debug/Release, `-Werror`: **2/2 CTest tests passed in each of four configurations**.
 - P1: Clang Debug with AddressSanitizer + UndefinedBehaviorSanitizer, `-Werror`: **2/2 tests passed**.
-- `independent_iq_roundtrip.py`: **24 raw producer/consumer roundtrips**, 6 formats × 4 packet sizes, 20,017 complex samples per case; per-format source/reconstructed SHA-256 matches; **16 negative streams rejected**.
+- `independent_roundtrip.py`: **24 raw producer/consumer roundtrips**, 6 formats × 4 packet sizes, 20,017 complex samples per case; per-format source/reconstructed SHA-256 matches; **16 negative streams rejected**.
 - Clang libFuzzer+ASan+UBSan: 10,000 empty-corpus randomized runs and 20,000 seeded mutation runs, no reported crash. This is a bounded fuzz smoke check, not a security audit or exhaustive parser verification.
 - GitHub Actions run [42945149685](https://github.com/hardcoreerik/OrcStream/actions/runs/42945149685) completed **successfully with 7/7 jobs**: Ubuntu, Windows and macOS Debug and Release host matrix (6 jobs) plus the Ubuntu sanitizer job. These are GitHub runner results, not local Windows/macOS tests. ESP-IDF/esp32p4 compiler was unavailable locally, so there is no embedded-build compatibility result. No real hardware or client interoperability tests.
 
