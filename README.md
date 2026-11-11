@@ -1,25 +1,23 @@
 # OrcStream
 
-**OrcStream** is an emerging, standalone, open-source SDR data and control protocol project. Its goal is to connect radio hardware, SDR applications, browsers, and gateways through a portable, fidelity-aware protocol.
+**OrcStream is a standalone, open SDR data and control protocol and portable SDK project.** It aims to connect radio hardware, software, firmware, computers, gateways and embedded devices without tying the protocol to one application or device.
 
-## Project status
+**Goal:** preserve original IQ when requested, while optionally delivering reversible packed IQ, filtered channels, spectrum, events, triggered samples and processing offload **when a source actually supports them**. Fidelity, sample timing and loss must remain explicit.
 
-**Pre-specification / research.** No protocol version, wire format, performance claim, or compatibility guarantee has been released.
+## Status
 
-## Design principles
+**Research and architecture stage on `main`.** An [experimental C99 v0.1 codec](https://github.com/hardcoreerik/OrcStream/tree/chatgpt/protocol-c99-v0.1-20261104) exists on a separate unmerged branch; it is not a released protocol or stable API. Compression, subscriptions, security, FPGA jobs and real Pluto integration are not yet implemented.
 
-- Preserve the original samples when full-fidelity IQ is requested. No silent quantization, decimation, or drops.
-- Separate radio acquisition and hardware drivers from network transports and application dashboards.
-- Support explicit subscriptions for full IQ, channel IQ, spectrum, audio, decoder events, telemetry, and controls.
-- Make sample timing, epochs, retunes, and known versus unknown gaps observable without inventing RF timestamps.
-- Keep control authority and authentication explicit; default to safe local deployment.
-- Prefer portable implementations with bounded memory and independently reproducible tests.
-- Keep established SDR client compatibility available through adapters, not by corrupting existing protocols.
+## Project tracking
 
-## Intended first integrations
+- [PROJECT_TRUTH.md](PROJECT_TRUTH.md) — canonical current truth, scope and non-negotiable principles
+- [ARCHITECTURE.md](ARCHITECTURE.md) — independent layers, hardware adapters and proposed offload model
+- [ROADMAP.md](ROADMAP.md) — workstreams, milestones and acceptance gates
+- [STATUS.md](STATUS.md) — evidence ledger and next engineering step
+- [Pluto acceleration plan](docs/PLUTO_ACCELERATION.md) — optional compatible firmware/FPGA reference platform
+- [Protocol evolution](docs/PROTOCOL_EVOLUTION.md) — proposed streams, codecs, events and processing-job contracts
+- [Validation plan](docs/VALIDATION.md) — repeatable fidelity, security, performance and hardware acceptance
 
-- [OrcSDR](https://github.com/hardcoreerik/OrcSDR)
-- [esp-rtl-sdr](https://github.com/hardcoreerik/esp-rtl-sdr) (independent hardware driver)
-- OrcSDR Web and future desktop/Linux gateway clients
+OrcSDR and [`esp-pluto-sdr`](https://github.com/hardcoreerik/esp-pluto-sdr) are intended early consumers, **not requirements**. Stock Pluto IIO compatibility and independent drivers are deliberate architectural constraints. The long-term goal includes Windows/Linux/macOS, Raspberry Pi and ESP32-P4 hosts as well as other SDR hardware.
 
-Protocol and licensing decisions will be documented before a production API is declared stable.
+**Built out of spite. Engineered to be undeniable.** Performance and interoperability claims must be earned with reproducible evidence.
