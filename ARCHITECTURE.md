@@ -79,3 +79,8 @@ The session control plane authenticates and authorizes control operations separa
 ## Compatibility and evolution
 
 The experimental C99 v0.1 64-byte header supports only IQ/HELLO and is not frozen. Add **versioned** metadata/packet families and capabilities rather than quietly reinterpreting old flags. No direct wire interoperability with rtl_tcp/VITA-49/SpyServer is claimed; support through explicit adapters with reference tests. See [docs/PROTOCOL_EVOLUTION.md](docs/PROTOCOL_EVOLUTION.md).
+
+
+## Experimental P1 implementation boundary (unmerged)
+
+The P1 branch has an allocation-free C99 framing/CRC/format core, borrowed payload pointers, a caller-owned fail-closed incremental reader and a single-stream continuity tracker. A separate offline producer and consumer operate on files, not on a radio or a socket. The reader requires 64–65,600 bytes of caller storage depending on accepted frame size. There is no transport or SDR dependency in the core and no session, multi-client service or control plane. See [P1 review](docs/P1_REVIEW.md).

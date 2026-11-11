@@ -1,0 +1,12 @@
+/build*/
+/out/
+*.orcs
+*.raw
+*.rebuilt
+*.log
+__pycache__/
+.DS_Store
+
+# libFuzzer writes new seeds; track only the checked-in fixed vector.
+/tests/corpus/*
+!/tests/corpus/cs16le_frame.bin

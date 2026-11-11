@@ -1,0 +1,31 @@
+name: P1 C99 fidelity checks
+on:
+  push:
+    branches: [main, 'agents/**']
+  pull_request:
+jobs:
+  host:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        mode: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ matrix.mode }}
+      - name: Compile
+        run: cmake --build build --config ${{ matrix.mode }} --parallel 2
+      - name: Test
+        run: ctest --test-dir build -C ${{ matrix.mode }} --output-on-failure
+  sanitizers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_FLAGS='-fsanitize=address,undefined -fno-omit-frame-pointer -Werror' -DCMAKE_EXE_LINKER_FLAGS='-fsanitize=address,undefined'
+      - name: Compile
+        run: cmake --build build --parallel 2
+      - name: Test
+        run: ctest --test-dir build --output-on-failure

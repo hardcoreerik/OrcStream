@@ -80,3 +80,8 @@ P1 is the immediate OrcStream repo work; **P2–P3** prove the protocol independ
 ## Update process
 
 Record every meaningful milestone in [STATUS.md](STATUS.md): date, branch/commit, evidence and remaining gaps. Update PROJECT_TRUTH after a state transition, not just because a branch exists. Project-specific implementation details live in [docs/PLUTO_ACCELERATION.md](docs/PLUTO_ACCELERATION.md) and protocol proposals in [docs/PROTOCOL_EVOLUTION.md](docs/PROTOCOL_EVOLUTION.md).
+
+
+## P1 review checkpoint (2026-11-10; unmerged)
+
+The `agents/p1-c99-fidelity-core` branch demonstrates repeatable native IQ host fidelity and negative-case tests; see [P1 validation](docs/P1_VALIDATION_REPORT.md). This is **not the P1 release gate**: ESP-IDF esp32p4 compile, expanded adversarial corpus, independent third-party wire decoding and device tests remain open. GitHub Actions Ubuntu/Windows/macOS Debug/Release and sanitizer jobs all passed ([run 42945149685](https://github.com/hardcoreerik/OrcStream/actions/runs/42945149685)). No wire/API freeze.
