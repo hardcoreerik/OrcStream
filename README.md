@@ -1,23 +1,25 @@
 # OrcStream
 
-**OrcStream is a standalone, open SDR data and control protocol and portable SDK project.** It aims to connect radio hardware, software, firmware, computers, gateways and embedded devices without tying the protocol to one application or device.
+OrcStream is an experimental, hardware-independent SDR stream protocol and portable C99 library. It transports native complex IQ bytes with explicit sample format, timing validity, sample index, packet sequence and CRC32.
 
-**Goal:** preserve original IQ when requested, while optionally delivering reversible packed IQ, filtered channels, spectrum, events, triggered samples and processing offload **when a source actually supports them**. Fidelity, sample timing and loss must remain explicit.
+**P1 development branch:** a C99 codec, an allocation-free incremental parser, offline producer/consumer and deterministic tests. All six native formats (CU8, CS8, CS16 LE/BE and CF32 LE/BE) are tested without converting samples. This is **not a stable protocol or production network service**.
 
-## Status
+Build and test:
 
-**Research and architecture stage on `main`.** An [experimental C99 v0.1 codec](https://github.com/hardcoreerik/OrcStream/tree/chatgpt/protocol-c99-v0.1-20261104) exists on a separate unmerged branch; it is not a released protocol or stable API. Compression, subscriptions, security, FPGA jobs and real Pluto integration are not yet implemented.
+```sh
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel
+ctest --test-dir build --output-on-failure
+```
 
-## Project tracking
+Offline IQ demo:
 
-- [PROJECT_TRUTH.md](PROJECT_TRUTH.md) — canonical current truth, scope and non-negotiable principles
-- [ARCHITECTURE.md](ARCHITECTURE.md) — independent layers, hardware adapters and proposed offload model
-- [ROADMAP.md](ROADMAP.md) — workstreams, milestones and acceptance gates
-- [STATUS.md](STATUS.md) — evidence ledger and next engineering step
-- [Pluto acceleration plan](docs/PLUTO_ACCELERATION.md) — optional compatible firmware/FPGA reference platform
-- [Protocol evolution](docs/PROTOCOL_EVOLUTION.md) — proposed streams, codecs, events and processing-job contracts
-- [Validation plan](docs/VALIDATION.md) — repeatable fidelity, security, performance and hardware acceptance
+```sh
+./build/orcstream_producer input.cs16le out.orcs 3 1024 2400000
+./build/orcstream_consumer out.orcs reconstructed.cs16le 3
+sha256sum input.cs16le reconstructed.cs16le
+```
 
-OrcSDR and [`esp-pluto-sdr`](https://github.com/hardcoreerik/esp-pluto-sdr) are intended early consumers, **not requirements**. Stock Pluto IIO compatibility and independent drivers are deliberate architectural constraints. The long-term goal includes Windows/Linux/macOS, Raspberry Pi and ESP32-P4 hosts as well as other SDR hardware.
+The protocol core does not depend on SDR hardware, a network, a specific operating system, or dynamic allocation. File I/O in the examples is a separate adapter. Use `docs/P1_VALIDATION_REPORT.md` for test evidence and `docs/P1_REVIEW.md` for limitations. `PROJECT_TRUTH.md` in `main` remains the authoritative release-state source until these changes merge.
 
-**Built out of spite. Engineered to be undeniable.** Performance and interoperability claims must be earned with reproducible evidence.
+OrcSDR and custom Pluto firmware are potential adopters, not build dependencies.
