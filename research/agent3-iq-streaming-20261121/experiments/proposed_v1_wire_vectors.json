@@ -1,0 +1,70 @@
+{
+  "protocol": "OrcStream",
+  "version": "1.0-draft-agent3",
+  "warning": "not a normative or shipped version; context_revision=1 assumed present in session",
+  "source_context": {
+    "stream_id": 1,
+    "epoch": 1,
+    "context_revision": 1,
+    "native_valid_bits": 12,
+    "source_format": "CS16_LE",
+    "sample_rate_num": 2400000,
+    "sample_rate_den": 1
+  },
+  "fixtures": [
+    {
+      "name": "raw_cs16le_3_iq",
+      "status": "DISCUSSION DRAFT - not adopted protocol",
+      "source_samples_iq": [
+        [
+          -2048,
+          2047
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          1024,
+          -1024
+        ]
+      ],
+      "codec_id": 0,
+      "source_format_id": 3,
+      "decoded_bytes": 12,
+      "encoded_bytes": 12,
+      "frame_bytes": 92,
+      "payload_hex": "00 f8 ff 07 ff ff 00 00 00 04 00 fc",
+      "crc32_hex": "68baa8fe",
+      "frame_hex": "4f 52 43 53 01 00 00 50 05 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 03 00 00 00 24 9f 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 0c 68 ba a8 fe 00 00 00 01 00 f8 ff 07 ff ff 00 00 00 04 00 fc",
+      "sha256_frame": "ddc0abf53396dca6430dbf6bc93ececd95696e9f5612163de06423d49b294e89"
+    },
+    {
+      "name": "packed_cs12_3_iq",
+      "status": "DISCUSSION DRAFT - not adopted protocol",
+      "source_samples_iq": [
+        [
+          -2048,
+          2047
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          1024,
+          -1024
+        ]
+      ],
+      "codec_id": 1,
+      "source_format_id": 3,
+      "decoded_bytes": 12,
+      "encoded_bytes": 9,
+      "frame_bytes": 89,
+      "payload_hex": "00 f8 7f ff 0f 00 00 04 c0",
+      "crc32_hex": "07b15062",
+      "frame_hex": "4f 52 43 53 01 00 00 50 05 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 03 00 00 00 24 9f 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 09 00 00 00 0c 07 b1 50 62 00 00 00 01 00 f8 7f ff 0f 00 00 04 c0",
+      "sha256_frame": "faddf81f00f624521966ae9d500f4386a80de6c4404f7862b573ace1e89dc0cb"
+    }
+  ]
+}

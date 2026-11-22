@@ -1,0 +1,97 @@
+{
+  "project": "OrcStream Agent 3 Research",
+  "date": "2026-11-21",
+  "status": "research_no_commit_no_push",
+  "files": [
+    {
+      "path": "AGENT3_RESEARCH_HANDOFF.md",
+      "bytes": 6110,
+      "sha256": "dbba7c88cb87a8eb08cb7aaa084701951d4615f241da55978d292b5b30d2b836"
+    },
+    {
+      "path": "docs/ADVANCED_IQ_CODEC_RESEARCH.md",
+      "bytes": 20218,
+      "sha256": "3583d140e41ca23c3596ab9fbe4f5c33afee7c3a96e342cb015cc6afe347e0ab"
+    },
+    {
+      "path": "docs/IQ_COMPRESSION_COMPETITIVE_LANDSCAPE.md",
+      "bytes": 18371,
+      "sha256": "83fe362776bce20d93c2bb0602bf9b73f608af368e9f93b2478cf46fe5f35a3a"
+    },
+    {
+      "path": "docs/ORCSTREAM_CODEC_PORTABILITY_MATRIX.md",
+      "bytes": 8841,
+      "sha256": "fc8696324fd13cb3b1e27ae3bf22cf8f5494275c7e19ce75e60e28e78935b8e1"
+    },
+    {
+      "path": "docs/ORCSTREAM_COMPETITIVE_DIFFERENTIATION.md",
+      "bytes": 9509,
+      "sha256": "bd0cae2891f7f57d4049e505f21b67d37969b8c11bc473e3c83f775e5f7c1550"
+    },
+    {
+      "path": "docs/ORCSTREAM_ENGINEERING_ROADMAP.md",
+      "bytes": 12892,
+      "sha256": "8ac6aeb30211463d0766a83875e184a30dac7c382e6710329d0361a8caf63034"
+    },
+    {
+      "path": "docs/ORCSTREAM_FIDELITY_AND_BENCHMARK_SPEC.md",
+      "bytes": 15768,
+      "sha256": "f30f4c9bffc28ab8b362b1d7aa64c9dcd27674561f1623adce06f74aa95de06c"
+    },
+    {
+      "path": "docs/ORCSTREAM_PROTOCOL_ARCHITECTURE.md",
+      "bytes": 14063,
+      "sha256": "3419e20002382922442bf9c3b0c569f8d99a769af292849809261da33f46afab"
+    },
+    {
+      "path": "docs/ORCSTREAM_V1_PROTOCOL_PROPOSAL.md",
+      "bytes": 16707,
+      "sha256": "8c81143a5f4a8e546f1acba099032b2add8faa8f1143c728650aeea710547bb8"
+    },
+    {
+      "path": "experiments/bundle_validation.log",
+      "bytes": 607,
+      "sha256": "628b2b0a0f1f28743aea328d27b5dc85d8e3c643a5b7f8ec7b7a1c1680ee7382"
+    },
+    {
+      "path": "experiments/codec_probe.py",
+      "bytes": 6020,
+      "sha256": "86b5f2455ffeafdaa380b54d3696e2c506b2eaee1dfee329340c6297e88c80e9"
+    },
+    {
+      "path": "experiments/proposed_v1_wire_vectors.json",
+      "bytes": 2175,
+      "sha256": "9ab0974baf58b4169a94be2ca3dc2cf344ec8c333cd86e697c722e1383d8ac9b"
+    },
+    {
+      "path": "experiments/run.log",
+      "bytes": 1615,
+      "sha256": "550baf718445fc1af1694fd9ae32e1795d809231c0e2d5242de6f7f64ee30264"
+    },
+    {
+      "path": "experiments/session_stdout.log",
+      "bytes": 1690,
+      "sha256": "ae5263ac4c425fef3785b34e36872108a6c3c0aed1ade04b04e8423251f9368a"
+    },
+    {
+      "path": "experiments/synthetic_results.csv",
+      "bytes": 5389,
+      "sha256": "7fa7747ff9d0726b70ea0c9cb5c96323acceec2172a73f8ab443733f02de05a1"
+    },
+    {
+      "path": "experiments/v1_draft_wire_vectors.py",
+      "bytes": 2649,
+      "sha256": "36f32ca302dda402d5f9cc61ced5eb5f53e3d56298ae09d3907cf543436ad9ec"
+    },
+    {
+      "path": "experiments/v1_wire_run.log",
+      "bytes": 56,
+      "sha256": "05c9d412e8124364746ed98a1719bb4e70dc8d608826f40df9ca0129c5e92a34"
+    },
+    {
+      "path": "experiments/validate_bundle.py",
+      "bytes": 2452,
+      "sha256": "d8f45ecb92e325e09093fbcac9e3ae22685e2e35f43779272243e5e46df8f4fb"
+    }
+  ]
+}

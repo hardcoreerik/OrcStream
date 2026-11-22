@@ -1,0 +1,12 @@
+utc_label=2026-11-21 synthetic exploratory probe seed=20261121 N=131072
+python=3.13.5 numpy=2.3.5 os=Linux-6.18.57-x86_64-with-glibc2.41
+zstd=/usr/bin/zstd lz4_python=True
+zeros: raw=524288 packed=393216 sha256_raw=07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541 bfp8_evm_pct=0.0000 peak_err=0 exp_range=0..0
+full_uniform_12b: raw=524288 packed=393216 sha256_raw=e30d7ea47d21906c1a3ffb9e08dcb3ba51241c77e202c319ae129a96817ac292 bfp8_evm_pct=0.7447 peak_err=15 exp_range=4..4
+gaussian_noise: raw=524288 packed=393216 sha256_raw=0a0f50b746e2537d2ecf7f4de351acdafaa8922af2f2b9caeb4d5aaf9d691193 bfp8_evm_pct=2.3366 peak_err=15 exp_range=3..4
+cw_chirp: raw=524288 packed=393216 sha256_raw=6ad3aff0fa0934d92ab1d7c5be9799dd5c72e0ca13b1c2db211166e39b98bda2 bfp8_evm_pct=0.6897 peak_err=15 exp_range=4..4
+fm: raw=524288 packed=393216 sha256_raw=efd444b82482191e0003032a0328c750a815b3137a2bd7a053bd83890bbdf51d bfp8_evm_pct=0.8882 peak_err=15 exp_range=4..4
+ofdm_qpsk: raw=524288 packed=393216 sha256_raw=a718dd230403dcdc8be456dab161afe43ac69e4ea410c934fe0058d95538724e bfp8_evm_pct=1.1493 peak_err=15 exp_range=4..4
+tone_plus_noise: raw=524288 packed=393216 sha256_raw=73a8944b98bcd79f2f36fb6da838b2048510e9c5b90d34b9a1e3d6737c7d18e5 bfp8_evm_pct=1.2674 peak_err=15 exp_range=4..4
+bursty_sparse: raw=524288 packed=393216 sha256_raw=b70ea07ee0efcf6eda8872503f693efb9f48c855c14ad552bd197e66e6745640 bfp8_evm_pct=1.4668 peak_err=15 exp_range=0..4
+pathological: raw=524288 packed=393216 sha256_raw=b6da15889e2e5d1e21ee20467cb3541a393c3cb3bfcc27c07d242b4a5a85dc23 bfp8_evm_pct=0.5833 peak_err=15 exp_range=4..4
